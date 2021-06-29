@@ -1,4 +1,4 @@
-![smartcs_x_ansible_logo.png](../ansible-handson/smartcs_x_ansible_logo.png)
+![smartcs_x_ansible_logo.png](https://github.com/ssol-smartcs/ansible-handson/blob/master/smartcs_x_ansible_logo.png)
 
 
 # ansible-tech-info
