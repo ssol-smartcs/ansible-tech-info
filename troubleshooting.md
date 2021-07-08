@@ -17,6 +17,24 @@
 <br>
 
 ## 目次
+- [1. Unable to connect to port 22 on x.x.x.x](./troubleshooting.md#1-unable-to-connect-to-port-22-on-xxxx)
+- [2. timed out](./troubleshooting.md#2-timed-out)
+- [3. Error reading SSH protocol banner](./troubleshooting.md#3-error-reading-ssh-protocol-banner)
+- [4. The authenticity of host x.x.x.x can't be established.](./troubleshooting.md#4-the-authenticity-of-host-xxxx-cant-be-established)
+- [5. Authentication failed.](./troubleshooting.md#5-authentication-failed)
+- [6. Bad authentication type](./troubleshooting.md#6-bad-authentication-type)
+- [7. Unable to automatically determine host network os.](./troubleshooting.md#7-unable-to-automatically-determine-host-network-os)
+- [8. network os cs is not supported](./troubleshooting.md#8-network-os-cs-is-not-supported)
+- [9. unable to elevate privilege to enable mode](./troubleshooting.md#9-unable-to-elevate-privilege-to-enable-mode)
+- [10 .command timeout triggered, timeout value is X secs.](./troubleshooting.md#10-command-timeout-triggered-timeout-value-is-x-secs)
+- [11. timeout value X seconds reached while trying to send](./troubleshooting.md#11-timeout-value-x-seconds-reached-while-trying-to-send)
+- [12. Ignoring timeout(10) for smartcs_facts](./troubleshooting.md#12-ignoring-timeout10-for-smartcs_facts)
+
+
+<br>
+<br>
+
+## エラーメッセージ一覧
 
 ### 1. Unable to connect to port 22 on x.x.x.x
 ```
@@ -130,7 +148,7 @@ SmartCS にログイン後、装置管理ユーザへの遷移が失敗しまし
 Playbookの"ansible_become_password"等で指定したパスワードが正しいかを確認して下さい。
 
 
-### 10.command timeout triggered, timeout value is X secs.
+### 10 .command timeout triggered, timeout value is X secs.
 ```
 "msg": "command timeout triggered, timeout value is 10 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."
 }
