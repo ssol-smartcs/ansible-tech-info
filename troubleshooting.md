@@ -46,7 +46,7 @@ fatal: [x.x.x.x]: FAILED! => {
 ```
 
 ## 2. timed out
-### エラーメッセージ
+#### エラーメッセージ
 ```
 fatal: [x.x.x.x]: FAILED! => {
     "msg": "timed out" 
@@ -63,7 +63,7 @@ fatal: [x.x.x.x]: FAILED! => {
 ```
 
 ## 3. Error reading SSH protocol banner
-### エラーメッセージ
+#### エラーメッセージ
 ```
 fatal: [x.x.x.x]: FAILED! => {
     "msg": "Error reading SSH protocol banner[Errno 104] Connection reset by peer" 
@@ -76,7 +76,7 @@ fatal: [x.x.x.x]: FAILED! => {
 ```
 
 ## 4. The authenticity of host x.x.x.x can't be established.
-### エラーメッセージ
+#### エラーメッセージ
 ```
 fatal: [x.x.x.x]: FAILED! => {
     "msg": "paramiko: The authenticity of host 'x.x.x.x ' can't be established. \nThe ecdsa-sha2-nistp521 key fingerprint is b' xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'." 
@@ -88,7 +88,7 @@ SSH接続を行い、ホスト鍵を登録するか、ansible.cfgの”host_key_
 <br>
 
 ## 5. Authentication failed.
-### エラーメッセージ
+#### エラーメッセージ
 ```
 fatal: [x.x.x.x]: FAILED! => {
     "msg": "Failed to authenticate: Authentication failed." 
@@ -106,7 +106,7 @@ SmartCSの接続許可設定を確認し、必要に応じて設定を追加し�
 (2)Ansibleを実行する管理ホストからSmartCSにログインする際の認証がエラーとなっています。SmartCSにログインするユーザのユーザ名、パスワードを確認して下さい。
 
 ## 6. Bad authentication type
-### エラーメッセージ
+#### エラーメッセージ
 ```
 fatal: [x.x.x.x]: FAILED! => {
     "msg": "Failed to authenticate: Bad authentication type; allowed types: ['publickey']" 
@@ -118,7 +118,7 @@ Ansibleを実行する管理ホストからSmartCSにログインする際のユ
 ```
 
 ## 7. Unable to automatically determine host network os.
-### エラーメッセージ
+#### エラーメッセージ
 ```
 fatal: [x.x.x.x]: FAILED! =>
     "msg": "Unable to automatically determine host network os. Please manually configure ansible_network_os value for this host"
@@ -129,7 +129,7 @@ fatal: [x.x.x.x]: FAILED! =>
 Playbook の ansible_network_os に “seiko. smartcs.smartcs"を設定して下さい。
 
 ## 8. network os cs is not supported
-### エラーメッセージ
+#### エラーメッセージ
 ```
 fatal: [x.x.x.x]: FAILED! => {
     "msg": "network os cs is not supported"
@@ -141,7 +141,7 @@ Playbook の ansible_network_os に “seiko. smartcs.smartcs"を設定して下
 
 
 ## 9. unable to elevate privilege to enable mode
-### エラーメッセージ
+#### エラーメッセージ
 ```
 fatal: [x.x.x.x ]: FAILED! =>
     "msg": "unable to elevate privilege to enable mode, at prompt [b'\\n(2)NS-2250>'] with error: su\r\nPassword:\r\nincorrect password\r\n(2)NS-2250> "
@@ -152,7 +152,7 @@ Playbookの"ansible_become_password"等で指定したパスワードが正し�
 
 
 ## 10. command timeout triggered, timeout value is X secs.
-### エラーメッセージ
+#### エラーメッセージ
 ```
 "msg": "command timeout triggered, timeout value is 10 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."
 }
@@ -165,7 +165,7 @@ SmartCSへのログイン や、 指定したコマンド を実行する際に 
 - [Network Debug and Trouble shooting Guide の Timeout issues](https://docs.ansible.com/ansible/latest/network/user_guide/network_debug_troubleshooting.html#timeout-issues)
 
 ## 11. timeout value X seconds reached while trying to send
-### エラーメッセージ
+#### エラーメッセージ
 ```
 "msg": "timeout value 10 seconds reached while trying to send command: b'ttysendwaitset tty 1 timeout 15 nl cr string \\"show version\"'"
 }
@@ -176,7 +176,7 @@ Playbookで指定したコマンドの実行において、 タイムアウト�
 
 
 ## 12. Ignoring timeout(10) for smartcs_facts
-### エラーメッセージ
+#### エラーメッセージ
 ```
 TASK [Gathering Facts] **************************************
 [WARNING]: Ignoring timeout(10) for smartcs_facts
