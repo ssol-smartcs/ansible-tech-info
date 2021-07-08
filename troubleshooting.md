@@ -31,9 +31,8 @@
 <br>
 <br>
 
-## エラーメッセージ一覧
-
-### 1. Unable to connect to port 22 on x.x.x.x
+## 1. Unable to connect to port 22 on x.x.x.x
+### エラーメッセージ
 ```
 fatal: [x.x.x.x]: FAILED! => {
     "msg": "[Errno None] Unable to connect to port 22 on x.x.x.x" 
