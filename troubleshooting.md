@@ -45,7 +45,8 @@ fatal: [x.x.x.x]: FAILED! => {
 (0)NS-2250# enable sshd
 ```
 
-### 2. timed out
+## 2. timed out
+### エラーメッセージ
 ```
 fatal: [x.x.x.x]: FAILED! => {
     "msg": "timed out" 
@@ -61,7 +62,8 @@ fatal: [x.x.x.x]: FAILED! => {
 (0)NS-2250# create ipfilter input accept …
 ```
 
-### 3. Error reading SSH protocol banner
+## 3. Error reading SSH protocol banner
+### エラーメッセージ
 ```
 fatal: [x.x.x.x]: FAILED! => {
     "msg": "Error reading SSH protocol banner[Errno 104] Connection reset by peer" 
@@ -73,7 +75,8 @@ fatal: [x.x.x.x]: FAILED! => {
 (0)NS-2250# set portd tty x limit rw 2 ro 3
 ```
 
-### 4. The authenticity of host x.x.x.x can't be established.
+## 4. The authenticity of host x.x.x.x can't be established.
+### エラーメッセージ
 ```
 fatal: [x.x.x.x]: FAILED! => {
     "msg": "paramiko: The authenticity of host 'x.x.x.x ' can't be established. \nThe ecdsa-sha2-nistp521 key fingerprint is b' xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'." 
@@ -84,7 +87,8 @@ SmartCSのSSHホスト鍵が管理ホストPCに登録されていません。
 SSH接続を行い、ホスト鍵を登録するか、ansible.cfgの”host_key_checking = False”のコメントアウトを外し、SSHホスト鍵のチェック行わない様にする等、確認をして下さい。
 <br>
 
-### 5. Authentication failed.
+## 5. Authentication failed.
+### エラーメッセージ
 ```
 fatal: [x.x.x.x]: FAILED! => {
     "msg": "Failed to authenticate: Authentication failed." 
@@ -101,7 +105,8 @@ SmartCSの接続許可設定を確認し、必要に応じて設定を追加し�
 ```
 (2)Ansibleを実行する管理ホストからSmartCSにログインする際の認証がエラーとなっています。SmartCSにログインするユーザのユーザ名、パスワードを確認して下さい。
 
-### 6. Bad authentication type
+## 6. Bad authentication type
+### エラーメッセージ
 ```
 fatal: [x.x.x.x]: FAILED! => {
     "msg": "Failed to authenticate: Bad authentication type; allowed types: ['publickey']" 
@@ -112,8 +117,8 @@ Ansibleを実行する管理ホストからSmartCSにログインする際のユ
 (0)NS-2250# set sshd auth basic
 ```
 
-### 7. Unable to automatically determine host network os.
-
+## 7. Unable to automatically determine host network os.
+### エラーメッセージ
 ```
 fatal: [x.x.x.x]: FAILED! =>
     "msg": "Unable to automatically determine host network os. Please manually configure ansible_network_os value for this host"
@@ -123,7 +128,8 @@ fatal: [x.x.x.x]: FAILED! =>
 管理ホストからSmartCS に接続する為のネットワーク OS オプションに、"smartcs"が設定されていません。 
 Playbook の ansible_network_os に “seiko. smartcs.smartcs"を設定して下さい。
 
-### 8. network os cs is not supported
+## 8. network os cs is not supported
+### エラーメッセージ
 ```
 fatal: [x.x.x.x]: FAILED! => {
     "msg": "network os cs is not supported"
@@ -134,7 +140,8 @@ fatal: [x.x.x.x]: FAILED! => {
 Playbook の ansible_network_os に “seiko. smartcs.smartcs"を設定して下さい。
 
 
-### 9. unable to elevate privilege to enable mode
+## 9. unable to elevate privilege to enable mode
+### エラーメッセージ
 ```
 fatal: [x.x.x.x ]: FAILED! =>
     "msg": "unable to elevate privilege to enable mode, at prompt [b'\\n(2)NS-2250>'] with error: su\r\nPassword:\r\nincorrect password\r\n(2)NS-2250> "
@@ -144,7 +151,8 @@ SmartCS にログイン後、装置管理ユーザへの遷移が失敗しまし
 Playbookの"ansible_become_password"等で指定したパスワードが正しいかを確認して下さい。
 
 
-### 10. command timeout triggered, timeout value is X secs.
+## 10. command timeout triggered, timeout value is X secs.
+### エラーメッセージ
 ```
 "msg": "command timeout triggered, timeout value is 10 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."
 }
@@ -156,7 +164,8 @@ SmartCSへのログイン や、 指定したコマンド を実行する際に 
 - [コネクションプラグインである、network _cliの各設定](https://docs.ansible.com/ansible/latest/collections/ansible/netcommon/network_cli_connection.html)
 - [Network Debug and Trouble shooting Guide の Timeout issues](https://docs.ansible.com/ansible/latest/network/user_guide/network_debug_troubleshooting.html#timeout-issues)
 
-### 11. timeout value X seconds reached while trying to send
+## 11. timeout value X seconds reached while trying to send
+### エラーメッセージ
 ```
 "msg": "timeout value 10 seconds reached while trying to send command: b'ttysendwaitset tty 1 timeout 15 nl cr string \\"show version\"'"
 }
@@ -166,7 +175,8 @@ Playbookで指定したコマンドの実行において、 タイムアウト�
 「command timeout triggered, timeout value is X secs. 」に記載している対処方法や、各モジュールのオプションを確認してください。
 
 
-### 12. Ignoring timeout(10) for smartcs_facts
+## 12. Ignoring timeout(10) for smartcs_facts
+### エラーメッセージ
 ```
 TASK [Gathering Facts] **************************************
 [WARNING]: Ignoring timeout(10) for smartcs_facts
