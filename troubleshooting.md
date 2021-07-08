@@ -23,7 +23,7 @@
 - [7. Unable to automatically determine host network os.](./troubleshooting.md#7-unable-to-automatically-determine-host-network-os)
 - [8. network os cs is not supported](./troubleshooting.md#8-network-os-cs-is-not-supported)
 - [9. unable to elevate privilege to enable mode](./troubleshooting.md#9-unable-to-elevate-privilege-to-enable-mode)
-- [10 .command timeout triggered, timeout value is X secs.](./troubleshooting.md#10-command-timeout-triggered-timeout-value-is-x-secs)
+- [10. command timeout triggered, timeout value is X secs.](./troubleshooting.md#10-command-timeout-triggered-timeout-value-is-x-secs)
 - [11. timeout value X seconds reached while trying to send](./troubleshooting.md#11-timeout-value-x-seconds-reached-while-trying-to-send)
 - [12. Ignoring timeout(10) for smartcs_facts](./troubleshooting.md#12-ignoring-timeout10-for-smartcs_facts)
 
@@ -145,7 +145,7 @@ SmartCS にログイン後、装置管理ユーザへの遷移が失敗しまし
 Playbookの"ansible_become_password"等で指定したパスワードが正しいかを確認して下さい。
 
 
-### 10 .command timeout triggered, timeout value is X secs.
+### 10. command timeout triggered, timeout value is X secs.
 ```
 "msg": "command timeout triggered, timeout value is 10 secs.\nSee the timeout setting options in the Network Debug and Troubleshooting Guide."
 }
