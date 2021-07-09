@@ -83,7 +83,6 @@ num  target  in    destination        source             prot
 num  target  in    destination        source             prot
   1  DROP    *     0.0.0.0/0          0.0.0.0/0          tcp  22
 ```
-<br>
 `status   : enable`となっていて、SSH接続が破棄されるような設定となっている場合は、  
 フィルター機能の無効化、あるいはSSH接続が破棄されないよう必要に応じて設定を追加して下さい。  
 ■フィルター機能の無効化
