@@ -133,7 +133,7 @@ fatal: [x.x.x.x]: FAILED! => {
 対象のSmartCS(x.x.x.x)のSSHホスト鍵が管理ホストに登録されておらず、SSH接続に失敗しています。
 <br>
 対象のSmartCSへ手動でSSH接続を行い、管理ホストにSSHホスト鍵を登録するか、  
-`ansible.cfg` の `host_key_checking = False` のコメントアウトを外し、SSHホスト鍵のチェック行わない様にする等の対処をして下さい。
+`ansible.cfg` の `host_key_checking = False` のコメントアウトを外し、SSHホスト鍵のチェック行わない様にする等の対処をして下さい。  
 <br>
 ■手動でSSH接続してホスト鍵を登録する場合
 管理ホストから以下のコマンドを実行して、対象のSmartCSへ手動でSSH接続を行います。
