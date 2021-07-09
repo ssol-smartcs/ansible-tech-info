@@ -157,7 +157,6 @@ $ cat ansible.cfg | grep host_key_checking
 #host_key_checking = False
 ```
 
-
 ## 5. Authentication failed.
 #### エラーメッセージ
 ```
@@ -166,16 +165,33 @@ fatal: [x.x.x.x]: FAILED! => {
 } 
 ```
 #### 対処方法
-以下の原因が考えられます。それぞれSmartCSの設定を確認して下さい。
-
-(1)対象のSmartCSに接続許可が無い為、エラーが発生して接続できません。
+対象のSmartCS(x.x.x.x)へのSSH接続の認証に失敗しています。  
 <br>
-SmartCSの接続許可設定を確認し、必要に応じて設定を追加して下さい。
+playbook内、あるいはplaybook実行時に使用しているインベントリなどで指定しているユーザ名/パスワードと    
+SmartCSに登録されているユーザ名/パスワードが一致していない可能性があります。  
+以下のコマンドを実行してSmartCSに該当のユーザが登録されているかどうかを確認します。 
 ```
-(0)NS-2250# show allowhost
-(0)NS-2250# create allowhost …
+(0)NS-2250# show user
+ User-Name        Category(Uid)    Public-Key  Port-Access-List
+ --------------------------------------------------------------
+ root             root(0)
+ setup            setup(198)
+ verup            verup(199)
+ log              log(200)
+ somebody         normal(100)
+ ansible          extusr(401)                  1-48
 ```
-(2)Ansibleを実行する管理ホストからSmartCSにログインする際の認証がエラーとなっています。SmartCSにログインするユーザのユーザ名、パスワードを確認して下さい。
+`User-Name` 列に該当のユーザが存在しない場合、以下のコマンドを実行してSmartCSへユーザを登録して下さい。
+```
+(0)NS-2250# create user <username> group extusr port <port_no> password
+Changing password for user <username>.
+New password:
+Retype new password:
+```
+`smartcs_tty_command` モジュールをご利用の場合は、以下のコマンドを実行してttyマネージ機能の権限を付与して下さい。
+```
+(0)NS-2250# set user <username> permission ttymanage on
+```
 
 ## 6. Bad authentication type
 #### エラーメッセージ
