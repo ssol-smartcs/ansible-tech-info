@@ -135,7 +135,7 @@ fatal: [x.x.x.x]: FAILED! => {
 対象のSmartCSへ手動でSSH接続を行い、管理ホストにSSHホスト鍵を登録するか、  
 `ansible.cfg` の `host_key_checking = False` のコメントアウトを外し、SSHホスト鍵のチェック行わない様にする等の対処をして下さい。  
 <br>
-■手動でSSH接続してホスト鍵を登録する場合
+■手動でSSH接続してホスト鍵を登録する場合  
 管理ホストから以下のコマンドを実行して、対象のSmartCSへ手動でSSH接続を行います。
 ```
 $ ssh <username>@x.x.x.x
@@ -147,7 +147,7 @@ $ cat ~/.ssh/known_hosts
 x.x.x.x ecdsa-sha2-nistp521 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
-■ansible.cfgの設定値を変更する場合
+■ansible.cfgの設定値を変更する場合  
 以下のコマンドを実行して、`host_key_checking` の設定状態を確認します。  
 `host_key_checking` の行が無い、あるいは `host_key_checking = True` となっている場合は、  
 `host_key_checking = False` となるように設定を変更します。
