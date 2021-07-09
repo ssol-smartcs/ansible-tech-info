@@ -40,15 +40,17 @@ fatal: [x.x.x.x]: FAILED! => {
 ```
 #### 対処方法
 対象のSmartCS(x.x.x.x)へのSSH接続に失敗しています。  
+<br>
 SmartCSのSSH サーバが有効化されていない可能性がありますので、以下のコマンドを実行してSmartCSのSSHサーバの状態を確認します。 
 ```
 (0)NS-2250# show service
 <sshd>
- status   : enable
+ status   : disable
  port     : 22
  auth     : basic
  host_key : device_depend
 ```
+<br>
 `<sshd>` が `status   : disable`となっている場合は、  
 以下のコマンドを実行して、SmartCSのSSHサーバを有効化して下さい。
 ```
@@ -63,14 +65,35 @@ fatal: [x.x.x.x]: FAILED! => {
 }
 ```
 #### 対処方法
-対象のSmartCSに接続試行中にタイムアウトエラーが発生して接続できません。管理ホストとSmartCS間のネットワークをご確認下さい。
+対象のSmartCSに接続試行中にタイムアウトエラーが発生して接続に失敗しています。  
+playbook実行時に使用しているインベントリに登録されているSmartCSのIPアドレスやホスト名、  
+および管理ホストとSmartCS間のネットワークをご確認下さい。  
 <br>
-また、SmartCSのフィルター機能でパケットが廃棄されている可能性があります。
-<br>
-以下のコマンドを実行して、管理ホストからのパケットが正しくSmartCSに届く設定となっているかを確認し、必要に応じて設定を追加して下さい。
+また、SmartCSのフィルター機能でパケットが廃棄されている可能性があります。  
+以下のコマンドを実行してフィルター機能の状態を確認します。
 ```
 (0)NS-2250# show ipfilter input
-(0)NS-2250# create ipfilter input accept …
+status : enable
+
+<ipfilter preset input table>
+num  target  in    destination        source             prot
+  1  ACCEPT  *     0.0.0.0/0          0.0.0.0/0          all  REL,EST
+  2  ACCEPT  lo    127.0.0.1          127.0.0.1          all
+
+<ipfilter configurable input table>
+num  target  in    destination        source             prot
+  1  DROP    *     0.0.0.0/0          0.0.0.0/0          tcp  22
+```
+<br>
+`status   : enable`となっていて、SSH接続が破棄されるような設定となっている場合は、  
+フィルター機能の無効化、あるいはSSH接続が破棄されないよう必要に応じて設定を追加して下さい。  
+■フィルター機能の無効化
+```
+(0)NS-2250# disable ipfilter
+```
+■SSH接続の受信許可(一例)
+```
+(0)NS-2250# create ipfilter input accept eth1 any any tcp 22
 ```
 
 ## 3. Error reading SSH protocol banner
