@@ -49,7 +49,7 @@ SmartCSのSSH サーバが有効化されていない可能性がありますの
  auth     : basic
  host_key : device_depend
 ```
-<sshd>のstatusがdisableとなっている場合は、  
+`<sshd>`が`status：disable`となっている場合は、  
 以下のコマンドを実行して、SmartCSのSSHサーバを有効化して下さい。
 ```
 (0)NS-2250# enable sshd
