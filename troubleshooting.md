@@ -50,7 +50,6 @@ SmartCSのSSH サーバが有効化されていない可能性がありますの
  auth     : basic
  host_key : device_depend
 ```
-<br>
 `<sshd>` が `status   : disable`となっている場合は、  
 以下のコマンドを実行して、SmartCSのSSHサーバを有効化して下さい。
 ```
