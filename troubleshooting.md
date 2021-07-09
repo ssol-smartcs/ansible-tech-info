@@ -50,7 +50,7 @@ SmartCSのSSH サーバが有効化されていない可能性がありますの
  auth     : basic
  host_key : device_depend
 ```
-`<sshd>` が `status   : disable`となっている場合は、  
+`<sshd>` が `status   : disable` となっている場合は、  
 以下のコマンドを実行して、SmartCSのSSHサーバを有効化して下さい。
 ```
 (0)NS-2250# enable sshd
@@ -83,7 +83,7 @@ num  target  in    destination        source             prot
 num  target  in    destination        source             prot
   1  DROP    *     0.0.0.0/0          0.0.0.0/0          tcp  22
 ```
-`status   : enable`となっていて、SSH接続が破棄されるような設定となっている場合は、  
+`status   : enable` となっていて、SSH接続が破棄されるような設定となっている場合は、  
 フィルター機能の無効化、あるいはSSH接続が破棄されないよう必要に応じて設定を追加して下さい。  
 <br>
 ■フィルター機能の無効化
@@ -103,10 +103,24 @@ fatal: [x.x.x.x]: FAILED! => {
 }
 ```
 #### 対処方法
-対象のSmartCSのttyについて、接続可能なRWセッション数を超過している可能性があります。portd設定を確認し、必要に応じて設定を変更して下さい。
+対象のSmartCS(x.x.x.x)へのSSH接続に失敗しています。  
+<br>
+SmartCSのアクセス許可設定でSSHサーバへの接続が許可されていない可能性があります。  
+以下のコマンドを実行してSmartCSのアクセス許可設定の状態を確認します。 
 ```
-(0)NS-2250# show portd tty
-(0)NS-2250# set portd tty x limit rw 2 ro 3
+(0)NS-2250# show allowhost
+Service         Address/Mask                            Access tty List
+--------------------------------------------------------------------
+portd/sshrw     all                                     all
+portd/telrw     all                                     all
+sshd            all                                     -
+telnetd         all                                     -
+```
+`Service` 列に `sshd` が存在しない、
+あるいは `sshd` の `Address/Mask` に管理ホストが含まれない場合、
+以下のコマンドを実行して、管理ホストからSmartCSへのSSH接続を許可して下さい。
+```
+(0)NS-2250# create allowhost <ipaddr/mask> service sshd
 ```
 
 ## 4. The authenticity of host x.x.x.x can't be established.
