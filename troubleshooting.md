@@ -85,6 +85,7 @@ num  target  in    destination        source             prot
 ```
 `status   : enable`となっていて、SSH接続が破棄されるような設定となっている場合は、  
 フィルター機能の無効化、あるいはSSH接続が破棄されないよう必要に応じて設定を追加して下さい。  
+<br>
 ■フィルター機能の無効化
 ```
 (0)NS-2250# disable ipfilter
