@@ -116,8 +116,8 @@ portd/telrw     all                                     all
 sshd            all                                     -
 telnetd         all                                     -
 ```
-`Service` 列に `sshd` が存在しない、
-あるいは `sshd` の `Address/Mask` に管理ホストが含まれない場合、
+`Service` 列に `sshd` が存在しない、  
+あるいは `sshd` の `Address/Mask` に管理ホストが含まれない場合、  
 以下のコマンドを実行して、管理ホストからSmartCSへのSSH接続を許可して下さい。
 ```
 (0)NS-2250# create allowhost <ipaddr/mask> service sshd
