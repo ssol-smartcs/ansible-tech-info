@@ -40,10 +40,16 @@ fatal: [x.x.x.x]: FAILED! => {
 ```
 #### 対処方法
 対象のSmartCS(x.x.x.x)へのSSH接続に失敗しています。  
-playbook実行時に参照しているインベントリに登録されているSmartCSのIPアドレス、ホスト名や、  
-管理ホストとSmartCSの間のネットワークをご確認下さい。
-<br>
-また、SmartCSのSSH サーバが有効化されていない可能性があります。  
+SmartCSのSSH サーバが有効化されていない可能性がありますので、以下のコマンドを実行してSmartCSのSSHサーバの状態を確認します。 
+```
+(0)NS-2250# show service
+<sshd>
+ status   : enable
+ port     : 22
+ auth     : basic
+ host_key : device_depend
+```
+<sshd>のstatusがdisableとなっている場合は、  
 以下のコマンドを実行して、SmartCSのSSHサーバを有効化して下さい。
 ```
 (0)NS-2250# enable sshd
