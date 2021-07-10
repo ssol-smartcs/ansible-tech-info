@@ -201,9 +201,27 @@ fatal: [x.x.x.x]: FAILED! => {
 }
 ```
 #### 対処方法
-Ansibleを実行する管理ホストからSmartCSにログインする際のユーザ認証方式に誤りがある為、認証エラーとなっています。SmartCSのSSHサーバユーザ認証方式を管理ホスト側と合わせて下さい。
+対象のSmartCS(x.x.x.x)へのSSH接続の認証に失敗しています。  
+<br>
+Ansibleを実行する管理ホストからSmartCSにログインする際のユーザ認証方式に誤りがある為、認証エラーとなっています。  
+SmartCSのSSHサーバユーザ認証方式を管理ホスト側と合わせて下さい。  
+以下のコマンドを実行してSmartCSで設定されているSSHサーバの認証方式を確認します。 
+```
+(0)NS-2250# show service
+<sshd>
+ status   : enable
+ port     : 22
+ auth     : public
+ host_key : device_depend
+```
+`auth` に記載されている部分がSmartCSに設定されている認証方式です。  
+パスワード認証を利用する場合、以下のコマンドを実行して設定を変更します。
 ```
 (0)NS-2250# set sshd auth basic
+```
+公開鍵認証を利用する場合、以下のコマンドを実行して設定を変更します。
+```
+(0)NS-2250# set sshd auth public
 ```
 
 ## 7. Unable to automatically determine host network os.
