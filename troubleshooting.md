@@ -232,20 +232,27 @@ fatal: [x.x.x.x]: FAILED! =>
 }
 ```
 #### 対処方法
-管理ホストからSmartCS に接続する為のネットワーク OS オプションに、"smartcs"が設定されていません。 
-Playbook の ansible_network_os に “seiko. smartcs.smartcs"を設定して下さい。
+playbook内、あるいはplaybook実行時に使用しているインベントリなどでネットワークOSオプションが指定されていません。  
+下記の通り、ネットワークOSオプションに `smartcs` を指定します。  
+■Anisble2.10系以降をご利用の場合  
+playbook、あるいはインベントリなどで、`ansible_network_os`　に `seiko.smartcs.smartcs` を設定して下さい。  
+■Ansible2.9系以前をご利用の場合  
+playbook、あるいはインベントリなどで、`ansible_network_os`　に `smartcs` を設定して下さい。  
 
-## 8. network os cs is not supported
+## 8. network os XXX is not supported
 #### エラーメッセージ
 ```
 fatal: [x.x.x.x]: FAILED! => {
-    "msg": "network os cs is not supported"
+    "msg": "network os XXX is not supported"
 }
 ```
 #### 対処方法
-管理ホストからSmartCS に接続する為のネットワーク OS オプションが設定されていません。 
-Playbook の ansible_network_os に “seiko. smartcs.smartcs"を設定して下さい。
-
+playbook内、あるいはplaybook実行時に使用しているインベントリなどで、サポート外のネットワークOSオプションが指定されています。  
+下記の通り、ネットワークOSオプションに `smartcs` を指定します。  
+■Anisble2.10系以降をご利用の場合  
+playbook、あるいはインベントリなどで、`ansible_network_os`　に `seiko.smartcs.smartcs` を設定して下さい。  
+■Ansible2.9系以前をご利用の場合  
+playbook、あるいはインベントリなどで、`ansible_network_os`　に `smartcs` を設定して下さい。  
 
 ## 9. unable to elevate privilege to enable mode
 #### エラーメッセージ
@@ -257,7 +264,6 @@ fatal: [x.x.x.x ]: FAILED! =>
 #### 対処方法
 SmartCS にログイン後、装置管理ユーザへの遷移が失敗しました。
 Playbookの"ansible_become_password"等で指定したパスワードが正しいかを確認して下さい。
-
 
 ## 10. command timeout triggered, timeout value is X secs.
 #### エラーメッセージ
