@@ -234,8 +234,10 @@ fatal: [x.x.x.x]: FAILED! =>
 #### 対処方法
 playbook内、あるいはplaybook実行時に使用しているインベントリなどでネットワークOSオプションが指定されていません。  
 下記の通り、ネットワークOSオプションに `smartcs` を指定します。  
+
 ■Anisble2.10系以降をご利用の場合  
 playbook、あるいはインベントリなどで、`ansible_network_os`　に `seiko.smartcs.smartcs` を設定して下さい。  
+
 ■Ansible2.9系以前をご利用の場合  
 playbook、あるいはインベントリなどで、`ansible_network_os`　に `smartcs` を設定して下さい。  
 
@@ -249,8 +251,10 @@ fatal: [x.x.x.x]: FAILED! => {
 #### 対処方法
 playbook内、あるいはplaybook実行時に使用しているインベントリなどで、サポート外のネットワークOSオプションが指定されています。  
 下記の通り、ネットワークOSオプションに `smartcs` を指定します。  
+
 ■Anisble2.10系以降をご利用の場合  
 playbook、あるいはインベントリなどで、`ansible_network_os`　に `seiko.smartcs.smartcs` を設定して下さい。  
+
 ■Ansible2.9系以前をご利用の場合  
 playbook、あるいはインベントリなどで、`ansible_network_os`　に `smartcs` を設定して下さい。  
 
