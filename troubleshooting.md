@@ -266,8 +266,14 @@ fatal: [x.x.x.x ]: FAILED! =>
 }
 ```
 #### 対処方法
-SmartCS にログイン後、装置管理ユーザへの遷移が失敗しました。
-Playbookの"ansible_become_password"等で指定したパスワードが正しいかを確認して下さい。
+対象のSmartCS(x.x.x.x)にログイン後、装置管理ユーザへの遷移が失敗しました。  
+playbook内、あるいはplaybook実行時に使用しているインベントリなどの `ansible_become_password` などで指定したパスワードが正しいかを確認して下さい。  
+<br>
+■装置管理ユーザへの遷移について  
+`smartcs_tty_command` 利用時は装置管理ユーザへの遷移は不要です。  
+`smartcs_config` 利用時は装置管理ユーザへの遷移が必須です。  
+`smartcs_command` や `smartcs_facts` を利用時は、実行するオペレーションによっては装置管理ユーザへの遷移が必要となります。  
+(例えば、設定情報を取得するオペレーションの場合は、装置管理ユーザへの遷移が必要です。)  
 
 ## 10. command timeout triggered, timeout value is X secs.
 #### エラーメッセージ
