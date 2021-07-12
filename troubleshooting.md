@@ -309,9 +309,9 @@ TASK [Gathering Facts] **************************************
 ok: [xxx.xxx.xxx.xxx]
 ```
 #### 対処方法
-Ansible2.9からネットワークモジュールの facts 収集は、 gather_facts 経由で行われるようになり、 SmartCS の場合は、 smartcs_facts モジュールが内部的に動作します。
+Ansible2.9からネットワークモジュールの facts 収集は、`gather_facts` 経由で行われるようになり、SmartCSの場合は、`smartcs_facts` モジュールが内部的に動作します。
 <br>
-その為、ansible.cfg等で設定されているfacts情報取集のタイムアウト値である、gather_timeout(DEFAULT_GATHER_TIMEOUT)については参照せず、コネクションプラグイン(network_cli)側のタイムアウト値で動作します。
+その為、`ansible.cfg` 等で設定されているfacts情報取集のタイムアウト値である、`gather_timeout(DEFAULT_GATHER_TIMEOUT)` については参照せず、コネクションプラグイン(network_cli)側のタイムアウト値で動作します。
 <br>
-このワーニングはその内容を警告しており、 Ansible2.9でSmartCSを操作する為の
-各モジュール を使った際に、 gather_facts: yes と指定する事で出力されてしまいますが、動作やPlaybook に 問題 ありません。
+このワーニングはその内容を警告しており、 Ansible2.9でSmartCSを操作する為の各モジュールを使った際に、  
+`gather_facts: yes` と指定する事で出力されてしまいますが、動作やPlaybookに問題ありません。
