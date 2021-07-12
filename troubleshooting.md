@@ -298,7 +298,7 @@ SmartCSへのログイン や、 指定したコマンド を実行する際に 
 #### 対処方法
 Playbookで指定したコマンドの実行において、 タイムアウトが発生し、コマンドの実行がエラーとなりました。
 <br>
-「command timeout triggered, timeout value is X secs. 」に記載している対処方法や、各モジュールのオプションを確認してください。
+「10. command timeout triggered, timeout value is X secs. 」に記載している対処方法や、各モジュールのオプションを確認してください。
 
 
 ## 12. Ignoring timeout(10) for smartcs_facts
