@@ -288,6 +288,34 @@ SmartCSへのログインや、指定したコマンドを実行する際にタ�
 - [管理ホスト側のAnsible のタイムアウトに関する各設定 ansible.cfg](https://docs.ansible.com/ansible/latest/reference_appendices/config.html)
 - [コネクションプラグインである、network _cliの各設定](https://docs.ansible.com/ansible/latest/collections/ansible/netcommon/network_cli_connection.html)
 - [Network Debug and Trouble shooting Guide の Timeout issues](https://docs.ansible.com/ansible/latest/network/user_guide/network_debug_troubleshooting.html#timeout-issues)
+<br>
+また、`smartcs_tty_command` を使用してSmartCSに接続されている機器へコマンドを実行している場合、以下の確認を行ってください。  
+
+■SmartCSに接続されている機器のコンソールを確認する場合  
+SmartCSのミラーリング機能を使用して、SmartCSに接続されている機器のコンソールにコマンドが送信されているか確認します。  
+Teratermなどを使用してSmartCSに接続されている機器のコンソールにSmartCS経由で手動接続をし、  
+再度playbookを実行してコマンドの送信が行われているかを確認してください。  
+
+手動での接続とAnsibleでの接続はSmartCSの設定で排他制御されています。  
+以下のコマンドを実行して排他制御が有効になっているかどうかを確認します。 
+```
+(0)NS-2250# show portd
+exclusive      : on
+```
+排他制御を無効にする場合、以下のコマンドを実行して設定を変更します。
+```
+(0)NS-2250# set portd service exclusive off
+```
+
+■SmartCS側のコマンド履歴を確認する場合  
+SmartCSのコマンド履歴から、SmartCSに接続されている機器のコンソールにコマンドが送信されたかどうか確認します。
+改行、`show clock` コマンド、`exit` コマンドを送信するように指定されたplaybookを実行した場合、SmartCS側のログには以下のように出力されます。
+```
+(0)NS-2250# show log ttymanage send tty <tty_no>
+2021 Jul 10 12:25:24 ansible: <CR>
+2021 Jul 10 12:25:25 ansible: show clock<CR>
+2021 Jul 10 12:25:26 ansible: exit<CR>
+```
 
 ## 11. timeout value X seconds reached while trying to send
 #### エラーメッセージ
