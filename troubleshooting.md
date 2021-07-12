@@ -288,6 +288,7 @@ SmartCSへのログインや、指定したコマンドを実行する際にタ�
 - [管理ホスト側のAnsible のタイムアウトに関する各設定 ansible.cfg](https://docs.ansible.com/ansible/latest/reference_appendices/config.html)
 - [コネクションプラグインである、network _cliの各設定](https://docs.ansible.com/ansible/latest/collections/ansible/netcommon/network_cli_connection.html)
 - [Network Debug and Trouble shooting Guide の Timeout issues](https://docs.ansible.com/ansible/latest/network/user_guide/network_debug_troubleshooting.html#timeout-issues)
+
 また、`smartcs_tty_command` を使用してSmartCSに接続されている機器へコマンドを実行している場合、以下の確認を行ってください。  
 
 ■SmartCSに接続されている機器のコンソールを確認する場合  
