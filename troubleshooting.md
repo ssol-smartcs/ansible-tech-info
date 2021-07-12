@@ -282,7 +282,7 @@ playbook内、あるいはplaybook実行時に使用しているインベント�
 }
 ```
 #### 対処方法
-SmartCSへのログイン や、 指定したコマンド を実行する際に タイムアウトが発生し、コマンドの実行がエラーとなりました。
+SmartCSへのログインや、指定したコマンドを実行する際にタイムアウトが発生し、コマンドの実行がエラーとなりました。  
 タイムアウト発生時には様々な要因が考えられますので、以下のタイムアウトに関するドキュメントを参照ください。
 <br>
 - [管理ホスト側のAnsible のタイムアウトに関する各設定 ansible.cfg](https://docs.ansible.com/ansible/latest/reference_appendices/config.html)
