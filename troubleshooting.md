@@ -22,7 +22,7 @@
 - [5. Authentication failed.](./troubleshooting.md#5-authentication-failed)
 - [6. Bad authentication type](./troubleshooting.md#6-bad-authentication-type)
 - [7. Unable to automatically determine host network os.](./troubleshooting.md#7-unable-to-automatically-determine-host-network-os)
-- [8. network os cs is not supported](./troubleshooting.md#8-network-os-cs-is-not-supported)
+- [8. network os XXX is not supported](./troubleshooting.md#8-network-os-xxx-is-not-supported)
 - [9. unable to elevate privilege to enable mode](./troubleshooting.md#9-unable-to-elevate-privilege-to-enable-mode)
 - [10. command timeout triggered, timeout value is X secs.](./troubleshooting.md#10-command-timeout-triggered-timeout-value-is-x-secs)
 - [11. timeout value X seconds reached while trying to send](./troubleshooting.md#11-timeout-value-x-seconds-reached-while-trying-to-send)
