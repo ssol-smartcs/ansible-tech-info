@@ -1,5 +1,5 @@
 # 本ページは現在メンテナンス中です。
-メンテナンスは2021年1月下旬頃までを予定しています。
+# メンテナンスは2021年1月下旬頃までを予定しています。
 
 ![smartcs_x_ansible_logo.png](https://github.com/ssol-smartcs/ansible-handson/blob/master/smartcs_x_ansible_logo.png)
 
