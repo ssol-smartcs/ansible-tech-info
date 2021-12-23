@@ -1,5 +1,7 @@
 # <font color="Red">本ページは2021年1月下旬頃までメンテナンスを行います。</font>
 
+<font color="Red">test</font>
+
 ![smartcs_x_ansible_logo.png](https://github.com/ssol-smartcs/ansible-handson/blob/master/smartcs_x_ansible_logo.png)
 
 SmartCS × Ansibleに関する技術的な情報をまとめたページです。  
