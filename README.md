@@ -1,3 +1,6 @@
+本ページは現在メンテナンス中です。
+メンテナンスは2021年1月下旬頃までを予定しています。
+
 ![smartcs_x_ansible_logo.png](https://github.com/ssol-smartcs/ansible-handson/blob/master/smartcs_x_ansible_logo.png)
 
 SmartCS × Ansibleに関する技術的な情報をまとめたページです。  
