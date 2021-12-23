@@ -1,4 +1,4 @@
-# 本ページは2021年1月下旬頃までメンテナンスを行います。
+# <font color="Red">本ページは2021年1月下旬頃までメンテナンスを行います。</font>
 
 ![smartcs_x_ansible_logo.png](https://github.com/ssol-smartcs/ansible-handson/blob/master/smartcs_x_ansible_logo.png)
 
