@@ -22,10 +22,11 @@ SmartCS の動作、設定方法、Ansible 連携機能などに関連する一�
 playbook 実行時に出力されるAnsible のエラーメッセージ内容、想定される原因および対処内容について記載しています。  
 記載の対処内容で必ずエラーが解消できるとは限りませんが、トラブル時の参考情報としてご活用ください。  
 
-### [トラブルシューティング (SmartCS modules for Ansible)](./smartcsmoduletips.md)
+### [トラブルシューティング (SmartCS x Ansible)](./smartcsmoduletips.md)
 
-- SmartCS modules for Ansible が想定した動作をしない場合のトラブルシュート一覧です。  
-playbook 実行結果が`ok`となりAnsible のエラーメッセージは出力されないものの、意図した動作とならない場合の事象、原因および対処内容について記載しています。  
+- SmartCS x Ansible が想定した動作をしない場合のトラブルシュート一覧です。  
+playbook 実行結果が`ok`となりAnsible のエラーメッセージは出力されないものの、  
+意図した動作とならない場合の事象、原因および対処内容について記載しています。  
 
 ### [ユースケース / サンプルPlaybook](./usecase.md)
 
