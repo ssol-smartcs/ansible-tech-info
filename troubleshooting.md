@@ -1,6 +1,6 @@
 [↑目次に戻る](./README.md)
 <br>
-# トラブルシューティング
+# トラブルシューティング (Ansible)
 
 本ページでは、SmartCS modules for Ansible を使用して、Playbook 実行時にエラーとなった場合の対応について説明します。
 <br>
@@ -343,3 +343,17 @@ Ansible2.9からネットワークモジュールの facts 収集は、`gather_f
 <br>
 このワーニングはその内容を警告しており、 Ansible2.9でSmartCSを操作する為の各モジュールを使った際に、  
 `gather_facts: yes` と指定する事で出力されてしまいますが、動作やPlaybookに問題ありません。
+
+
+## 13. Error detect
+#### エラーメッセージ
+```
+fatal: [x.x.x.x]: FAILED! => {
+"msg": "Error detect ['Error:: Timeout.', 'Error:: After error.', 'Error:: After error.']"
+}
+```
+#### 対処方法
+
+<br>
+<br>
+[↑目次に戻る](./README.md)
