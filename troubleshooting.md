@@ -353,7 +353,19 @@ fatal: [x.x.x.x]: FAILED! => {
 }
 ```
 #### 対処方法
+Playbookで指定したコマンドの実行においてエラーが発生しています。  
+`smartcs_tty_command`モジュールの`error_detect_on_module`オプションで`failed`を指定している場合に出力されます。  
+オプションを未指定、あるいは`ok`を指定している場合、`ansible-playbook`コマンドの実行結果はエラーになりません。  
+
+エラーの内容が`Timeout`となっていることから、`recvchar`で指定した文字列を受信できずにタイムアウトとなっています。その結果、以降の文字列の送信を行わず、`After error`のエラーメッセージとなっています。
+※`After error`は、`error_detect_on_sendchar`オプションの設定が`cancel`の場合に発生します。  
+
+エラーログからどの`sendchar`を送信した際に`Timeout`エラーが発生しているのかを確認し、適切な受信文字列を`recvchar`に記載してください。  
+
+エラーメッセージとエラー内容の一覧は、下記ページに掲載のAnsible用モジュール運用ガイド「8.1.5 解説 "(7) error_detect_on_sendchar の動作"」を参照してください。  
+https://www.seiko-sol.co.jp/products/console-server/console-server_download/
 
 <br>
 <br>
+
 [↑目次に戻る](./README.md)
