@@ -27,6 +27,7 @@
 - [10. command timeout triggered, timeout value is X secs.](./troubleshooting.md#10-command-timeout-triggered-timeout-value-is-x-secs)
 - [11. timeout value X seconds reached while trying to send](./troubleshooting.md#11-timeout-value-x-seconds-reached-while-trying-to-send)
 - [12. Ignoring timeout(10) for smartcs_facts](./troubleshooting.md#12-ignoring-timeout10-for-smartcs_facts)
+- [13. Error detect](./troubleshooting.md#13-error-detect)
 
 
 <br>
