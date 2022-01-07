@@ -15,7 +15,7 @@ Playbook 実行時にAnsible のエラーメッセージが出力される場合
 <br>
 
 ## 目次
-- [sendchar や recvchar が想定とは異なり正しく動作しない場合があります。どのように回避すれば良いでしょうか。](./smartcsmoduletips.md#1-sendchar-や-recvchar-が想定とは異なり正しく動作しない場合がありますどのように回避すれば良いでしょうか)
+- [1. sendchar や recvchar が想定とは異なり正しく動作しない場合があります。どのように回避すれば良いでしょうか。](./smartcsmoduletips.md#1-sendchar-や-recvchar-が想定とは異なり正しく動作しない場合がありますどのように回避すれば良いでしょうか)
 
 <br>
 <br>
