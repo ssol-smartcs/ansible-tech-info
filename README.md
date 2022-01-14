@@ -28,8 +28,8 @@ Playbook 実行時に出力されるAnsible のエラーメッセージ内容、
 Playbook 実行結果が`ok`となりAnsible のエラーメッセージは出力されないものの、  
 意図した動作とならない場合の事象、原因および対処内容について記載しています。  
 
-### [ユースケース / サンプルPlaybook](./usecase.md)
+### [Playbook例](./playbook-example/README.md)
 
-- SmartCS x Ansible を活用したユースケースとサンプルPlaybook の一覧です。  
-サンプルPlaybook の内容は、弊社にて確認を行った時点で正常に動作した内容となります。  
+- SmartCS x Ansible を活用したユースケースとPlaybook例 の一覧です。  
+Playbook 例の内容は、弊社にて確認を行った時点で正常に動作した内容となります。  
 ご利用の環境によっては記載内容と動作が異なる可能性がございます。  
