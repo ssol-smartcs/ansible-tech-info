@@ -30,6 +30,7 @@ Playbook 実行時にAnsible のエラーメッセージが出力される場合
 また、`recvchar` で指定する文字列に不要な半角スペースなどが含まれている場合、受信した文字列が`recvchar` に含まれていないと判断されます。  
 受信する文字列が`recvchar` で正しく指定されているかどうか、併せてご確認ください。
 <br>
+
 なお、`smartcs_tty_command` モジュールの`error_detect_on_module` オプションを未指定、あるいは`ok` を指定している場合は、`recvchar` を受信できずに文字列の送受信が停止してもPlaybookの実行結果はエラーになりません。  
 Playbook の実行結果をエラーとしたい場合は、`failed` を指定してください。
 
