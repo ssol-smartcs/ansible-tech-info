@@ -28,6 +28,7 @@ SmartCS のダイレクトモード、セレクトモードで接続している
 (0)NS-2250# set portd tty 1 cmdchar 01
 ```
 <br>
+
 ### 2. 拡張ユーザ(extusr グループのユーザ)の用途を教えてください。
 拡張ユーザ(extusr グループ)は設定により権限を付与できるユーザです。  
 tty マネージ機能の権限を付与することで、Ansible と連携して SmartCS modules for Ansible を利用することが可能となります。  
