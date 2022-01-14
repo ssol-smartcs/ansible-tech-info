@@ -25,7 +25,7 @@ AnsibleやSmartCS用モジュールのバージョンなど、ご利用の環境
 
 [wait_specific_recvchar.yml](./wait_specific_recvchar.yml) は、SmartCSのtty1に接続されたCisco装置に対してshow running-config GigabitEthernet 0/1 を実行し、GigabitEthernet 0/1が shutdown であれば no shutdown を実行するPlaybook例です。
 
-### 動作確認環境
+#### 動作確認環境
 * SmartCS System Software Version 2.2
 * Ansible 2.10.15
 
