@@ -4,7 +4,7 @@
 <br>
 # ユースケース / サンプルPlaybook
 
-本ページでは、SmartCS x Ansible を活用したユースケース、およびサンプルPlaybook を説明しています。  
+本ページでは、SmartCS x Ansible の連携機能を活用したユースケース、およびサンプルPlaybook を掲載しています。  
 
 `注意事項`  
 サンプルPlaybook の内容は、弊社にて確認を行った時点で正常に動作した内容となります。
