@@ -15,6 +15,7 @@ AnsibleやSmartCS用モジュールのバージョンなど、ご利用の環境
 ## 目次
 - [1. 特定のrecvcharを受信した際に特定のsendcharを送信する場合](./README.md#1-特定のrecvcharを受信した際に特定のsendcharを送信する場合)
 
+
 ## 1. 特定のrecvcharを受信した際に特定のsendcharを送信する場合
 
 `smartcs_tty_command` モジュールには`recvchar`と`sendchar`を1対1で対応させるようなオプションがありませんが、`register`変数などと組み合わせることで実現が可能です。
