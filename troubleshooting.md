@@ -358,7 +358,7 @@ Playbookで指定したコマンドの実行においてエラーが発生して
 `smartcs_tty_command` モジュールの`error_detect_on_module` オプションで`failed` を指定している場合に出力されます。  
 オプションを未指定、あるいは`ok` を指定している場合、playbookの実行結果はエラーになりません。  
 
-エラーの内容が`Timeout` となっていることから、`recvchar` で指定した文字列を受信できずにタイムアウトとなっています。その結果、以降の文字列の送信を行わず、`After error` のエラーメッセージとなっています。
+エラーの内容が`Timeout` となっていることから、`recvchar` で指定した文字列を受信できずにタイムアウトとなっています。その結果、以降の文字列の送信を行わず、`After error` のエラーメッセージとなっています。  
 ※`After error` は、`error_detect_on_sendchar` オプションの設定が`cancel` の場合に発生します。  
 
 エラーログからどの`sendchar` を送信した際に`Timeout` エラーが発生しているのかを確認し、適切な受信文字列を`recvchar` に記載してください。  
