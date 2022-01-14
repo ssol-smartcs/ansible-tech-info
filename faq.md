@@ -4,7 +4,7 @@
 <br>
 # よくあるご質問
 
-本ページでは、SmartCS x Ansible 連携機能を利用するにあたり、SmartCS の動作、設定方法、Ansible 連携機能などのよくあるご質問を記載しています。  
+本ページでは、SmartCS x Ansible の連携機能を利用するにあたり、SmartCS の動作、設定方法、Ansible 連携機能などに関連するよくあるご質問と回答を掲載しています。  
 
 <br>
 
