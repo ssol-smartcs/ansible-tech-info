@@ -29,6 +29,6 @@ Playbook 実行結果が`ok`となりAnsible のエラーメッセージは出�
 
 ### [Playbook例](./playbook-example/README.md)
 
-- SmartCS x Ansible を活用したユースケースとサンプルPlaybook の一覧です。  
+- SmartCS x Ansible の連携機能を活用したユースケースとサンプルPlaybook の一覧です。  
 サンプルPlaybook の内容は、弊社にて確認を行った時点で正常に動作した内容となります。  
 ご利用の環境によっては記載内容と動作が異なる可能性がございます。  
