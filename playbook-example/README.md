@@ -27,6 +27,7 @@ AnsibleやSmartCS用モジュールのバージョンなど、ご利用の環境
 
 #### 動作確認環境
 * SmartCS System Software Version 2.2
+* SmartCS modules for Ansible Version 1.4.1
 * Ansible 2.10.15
 
 <br>
