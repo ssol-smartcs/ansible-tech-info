@@ -1,4 +1,4 @@
-# 本ページはメンテナンス中です。
+# 本ページはメンテナンス中ですaaaa。
 
 
 ![smartcs_x_ansible_logo.png](https://github.com/ssol-smartcs/ansible-handson/blob/master/smartcs_x_ansible_logo.png)
