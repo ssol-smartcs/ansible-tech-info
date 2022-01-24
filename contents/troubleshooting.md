@@ -1,4 +1,4 @@
-[↑トップページに戻る](./README.md)
+[↑トップページに戻る](../README.md)
 <br>
 # トラブルシューティング (Ansible)
 
@@ -369,4 +369,4 @@ https://www.seiko-sol.co.jp/products/console-server/console-server_download/
 <br>
 <br>
 
-[↑トップページに戻る](./README.md)
+[↑トップページに戻る](../README.md)
