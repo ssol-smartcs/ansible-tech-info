@@ -20,7 +20,7 @@ AnsibleやSmartCS用モジュールのバージョンなど、ご利用の環境
 
 ## 1. [特定のrecvcharを受信した際に特定のsendcharを送信する場合](./examples/wait_specific_recvchar.md)
 
-* Cisco IOS との連携
+* Cisco IOS と連携して、コマンド実行結果に特定の文字列が含まれている場合に、特定のコマンドを送信するPlaybookの例となります。
 
 
 <br>
