@@ -13,7 +13,7 @@ AnsibleやSmartCS用モジュールのバージョンなど、ご利用の環境
 <br>
 
 ## 目次
-- [1. 特定のrecvcharを受信した際に特定のsendcharを送信する場合](./README.md#1-特定のrecvcharを受信した際に特定のsendcharを送信する場合)
+- [1. 特定のrecvcharを受信した際に特定のsendcharを送信する場合](./playbook-example.md#1-特定のrecvcharを受信した際に特定のsendcharを送信する場合)
 
 <br>
 <br>
