@@ -9,8 +9,6 @@
 
 ## Playbook例
 
-* [wait_specific_recvchar.yml](./wait_specific_recvchar.yml)
-
 ```yaml
 ---
 - name: check status and enable interface
