@@ -17,12 +17,12 @@ SmartCS の動作、設定方法、Ansible 連携機能などに関連するよ�
 ### SmartCSに接続するユーザについて
 - [拡張ユーザの用途を教えてください](#拡張ユーザの用途を教えてください)
 ### Playbookの作成について
-- [smartcs_tty_commandモジュールを使用したPlaybookは、どのような手順で作成すれば良いでしょうか](#smartcs_tty_commandモジュールを使用したPlaybookは、どのような手順で作成すれば良いでしょうか)
+- [smartcs＿tty＿commandモジュールを利用したPlaybookはどのような手順で作成すれば良いでしょうか](#smartcs＿tty＿commandモジュールを利用したPlaybookはどのような手順で作成すれば良いでしょうか)
 - [sendcharオプションで指定した文字列はどのような順番で実行されるのでしょうか](#sendcharオプションで指定した文字列はどのような順番で実行されるのでしょうか)
 - [recvcharオプションで指定する文字列は、sendcharオプションで指定する文字列と記載する順番を合わせる必要があるのでしょうか](#recvcharオプションで指定する文字列は、sendcharオプションで指定する文字列と記載する順番を合わせる必要があるのでしょうか)
 ### Playbookの実行結果について
-- [custom_responseオプション有効時に出力されるstdout_lines_customのresponseはどのような内容なのでしょうか](#custom_responseオプション有効時に出力されるstdout_lines_customのresponseはどのような内容なのでしょうか)
-- [custom_responseオプション有効時に、設定反映時のログ情報も出力されるのですが、どのように対処すれば良いでしょうか](#custom_responseオプション有効時に、設定反映時のログ情報も出力されるのですが、どのように対処すれば良いでしょうか)
+- [custom＿responseオプション有効時に出力されるstdout＿lines＿customのresponseはどのような内容なのでしょうか](#custom＿responseオプション有効時に出力されるstdout＿lines＿customのresponseはどのような内容なのでしょうか)
+- [custom＿responseオプション有効時に設定反映時のログ情報も出力されるのですが、どのように対処すれば良いでしょうか](#custom＿responseオプション有効時に設定反映時のログ情報も出力されるのですが、どのように対処すれば良いでしょうか)
 
 
 <br>
@@ -57,7 +57,7 @@ tty マネージ機能の権限を付与することで、Ansible と連携し�
 | 拡張ユーザ | 一般ユーザの権限に加え、Ansible と連携してシリアルポートに接続された装置へアクセス可能なユーザ |
 <br><br>
 
-### smartcs_tty_commandモジュールを使用したPlaybookは、どのような手順で作成すれば良いでしょうか
+### smartcs＿tty＿commandモジュールを利用したPlaybookはどのような手順で作成すれば良いでしょうか
 `smartcs_tty_command` モジュールを利用する場合、送信する文字列(sendchar)と受信が期待される文字列(recvchar)をPlaybook に記載する必要があります。  
 文字列(sendchar)を送信した際にどのような文字列(recvchar)が出力されるかが重要となりますので、  
 1. 送信する文字列(コマンドなど)、受信する文字列(プロンプトなど)を実際に確認しながらPlaybook を作成  
@@ -83,11 +83,11 @@ Playbook 作成の段階では、オペレーションが途中で停止して�
 リスト内のいずれかの文字列を受信すると、次の`sendchar` を送信します。  
 <br><br>
 
-### custom_responseオプション有効時に出力されるstdout_lines_customのresponseはどのような内容なのでしょうか
+### custom＿responseオプション有効時に出力されるstdout＿lines＿customのresponseはどのような内容なのでしょうか
 `custom_response` オプションを有効にした際に出力される`stdout_lines_custom` の`response` 部分には、`sendchar` オプションで指定した文字列(execute_command に格納される内容)を送信してから、`recvchar` オプションで指定した文字列のいずれかを受信するまでの入出力情報が含まれます。  
 <br><br>
 
-### custom_responseオプション有効時に、設定反映時のログ情報も出力されるのですが、どのように対処すれば良いでしょうか
+### custom＿responseオプション有効時に設定反映時のログ情報も出力されるのですが、どのように対処すれば良いでしょうか 
 `stdout_lines_custom` に含まれる`response` から必要な部分だけをパースしていただくか、設定反映時のログ情報などの不要な行を削除していただくことになります。  
 <br><br>
 
