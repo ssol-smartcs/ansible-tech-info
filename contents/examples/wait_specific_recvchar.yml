@@ -1,0 +1,46 @@
+---
+- name: check status and enable interface
+  hosts: smartcs
+  gather_facts: no
+
+  tasks:
+  - name: show running config
+    seiko.smartcs.smartcs_tty_command:
+      tty: '1'
+      error_detect_on_module: failed
+      recvchar:
+      - 'Password: '
+      - 'Switch>'
+      - 'Switch#'
+      sendchar:
+      - '__NL__'
+      - 'secret'
+      - 'enable'
+      - 'secret'
+      - 'show running-config interface GigabitEthernet 0/1'
+    register: result
+
+  - name: enable interface
+    seiko.smartcs.smartcs_tty_command:
+      tty: '1'
+      error_detect_on_module: failed
+      recvchar:
+      - 'started.'
+      - 'Switch#'
+      - 'Switch(config)#'
+      - 'Switch(config-if)#'
+      sendchar:
+      - '__NL__'
+      - 'configure terminal'
+      - 'interface GigabitEthernet 0/1'
+      - 'no shutdown'
+      - 'end'
+      - 'exit'
+    when: "' shutdown' in result.stdout_lines[4]" 
+
+  vars:
+  - ansible_connection: ansible.netcommon.network_cli
+  - ansible_network_os: seiko.smartcs.smartcs
+  - ansible_command_timeout: 60
+  - ansible_user: ansible
+  - ansible_password: ansible
