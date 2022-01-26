@@ -60,9 +60,9 @@
 
 ## 説明
 
-*  `sendchar`で送信したコマンドの戻り値を`register`変数に格納しておき、期待する文字列が`register`変数内に含まれている場合に続きのコマンドを送信する`task`を別に用意します。
+*  `sendchar` で送信したコマンドの戻り値を`register` 変数に格納しておき、期待する文字列が`register` 変数内に含まれている場合に続きのコマンドを送信する`task` を別に用意します。
 
-* このPlaybookは、SmartCSのtty1に接続されたCisco装置に対してshow running-config GigabitEthernet 0/1 を実行し、GigabitEthernet 0/1が shutdown であれば no shutdown を実行するPlaybook例です。
+* このPlaybook は、SmartCSのtty1に接続されたCisco装置に対して`show running-config GigabitEthernet 0/1` を実行し、`GigabitEthernet 0/1` が`shutdown` であれば`no shutdown` を実行するPlaybook 例です。
 
 
 ## 動作確認環境
