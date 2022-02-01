@@ -19,7 +19,7 @@ SmartCS の動作、設定方法、Ansible 連携機能などに関連するよ�
 ### Playbookの作成について
 - [smartcs_tty_commandモジュールを利用したPlaybookはどのような手順で作成すれば良いでしょうか](#smartcs＿tty＿commandモジュールを利用したPlaybookはどのような手順で作成すれば良いでしょうか)
 - [sendcharオプションで指定した文字列は、どのような順番で実行されるのでしょうか](#sendcharオプションで指定した文字列はどのような順番で実行されるのでしょうか)
-- [recvcharオプションで指定する文字列は、sendcharオプションで指定する文字列と記載する順番を合わせる必要があるのでしょうか](#recvcharオプションで指定する文字列は、sendcharオプションで指定する文字列と記載する順番を合わせる必要があるのでしょうか)
+- [recvcharオプションで指定する文字列はsendcharオプションで指定する文字列と記載する順番を合わせる必要があるのでしょうか](#recvcharオプションで指定する文字列はsendcharオプションで指定する文字列と記載する順番を合わせる必要があるのでしょうか)
 ### Playbookの実行結果について
 - [custom_responseオプション有効時に出力されるstdout_lines_customのresponseは、どのような内容なのでしょうか](#custom＿responseオプション有効時に出力されるstdout＿lines＿customのresponseはどのような内容なのでしょうか)
 - [custom_responseオプション有効時に設定反映時のログ情報も出力されるのですが、どのように対処すれば良いでしょうか](#custom＿responseオプション有効時に設定反映時のログ情報も出力されるのですが、どのように対処すれば良いでしょうか)
