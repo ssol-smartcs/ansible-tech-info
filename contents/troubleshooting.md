@@ -1,6 +1,6 @@
-[↑目次に戻る](./README.md)
+[↑トップページに戻る](../README.md)
 <br>
-# トラブルシューティング
+# トラブルシューティング (Ansible)
 
 本ページでは、SmartCS modules for Ansible を使用して、Playbook 実行時にエラーとなった場合の対応について説明します。
 <br>
@@ -27,6 +27,7 @@
 - [10. command timeout triggered, timeout value is X secs.](./troubleshooting.md#10-command-timeout-triggered-timeout-value-is-x-secs)
 - [11. timeout value X seconds reached while trying to send](./troubleshooting.md#11-timeout-value-x-seconds-reached-while-trying-to-send)
 - [12. Ignoring timeout(10) for smartcs_facts](./troubleshooting.md#12-ignoring-timeout10-for-smartcs_facts)
+- [13. Error detect](./troubleshooting.md#13-error-detect)
 
 
 <br>
@@ -343,3 +344,29 @@ Ansible2.9からネットワークモジュールの facts 収集は、`gather_f
 <br>
 このワーニングはその内容を警告しており、 Ansible2.9でSmartCSを操作する為の各モジュールを使った際に、  
 `gather_facts: yes` と指定する事で出力されてしまいますが、動作やPlaybookに問題ありません。
+
+
+## 13. Error detect
+#### エラーメッセージ
+```
+fatal: [x.x.x.x]: FAILED! => {
+"msg": "Error detect ['Error:: Timeout.', 'Error:: After error.', 'Error:: After error.']"
+}
+```
+#### 対処方法
+Playbookで指定したコマンドの実行においてエラーが発生しています。  
+`smartcs_tty_command` モジュールの`error_detect_on_module` オプションで`failed` を指定している場合に出力されます。  
+オプションを未指定、あるいは`ok` を指定している場合、playbookの実行結果はエラーになりません。  
+
+エラーの内容が`Timeout` となっていることから、`recvchar` で指定した文字列を受信できずにタイムアウトとなっています。その結果、以降の文字列の送信を行わず、`After error` のエラーメッセージとなっています。  
+※`After error` は、`error_detect_on_sendchar` オプションの設定が`cancel` の場合に発生します。  
+
+エラーログからどの`sendchar` を送信した際に`Timeout` エラーが発生しているのかを確認し、適切な受信文字列を`recvchar` に記載してください。  
+
+エラーメッセージとエラー内容の一覧は、下記ページに掲載のAnsible用モジュール運用ガイド「8.1.5 解説 "(7) error_detect_on_sendchar の動作"」を参照してください。  
+https://www.seiko-sol.co.jp/products/console-server/console-server_download/
+
+<br>
+<br>
+
+[↑トップページに戻る](../README.md)
