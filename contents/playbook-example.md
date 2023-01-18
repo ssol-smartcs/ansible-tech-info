@@ -13,7 +13,7 @@ AnsibleやSmartCS用モジュールのバージョンなど、ご利用の環境
 
 ## 目次
 - [1. 特定のrecvcharを受信した際に特定のsendcharを送信する場合](./playbook-example.md#1-特定のrecvcharを受信した際に特定のsendcharを送信する場合)
-- [2. sendcharで指定した文字列の実行結果をファイルとして保存する際に余分な改行を削除する場合](./playbook-example.md#2-sendcharで指定した文字列の実行結果をファイルとして保存する際に余分な改行を削除する場合)
+- [2. sendcharで指定した文字列の実行結果をファイルとして保存する際に、余分な改行を削除する場合](./playbook-example.md#2-sendcharで指定した文字列の実行結果をファイルとして保存する際に、余分な改行を削除する場合)
 
 <br>
 <br>
@@ -25,7 +25,7 @@ AnsibleやSmartCS用モジュールのバージョンなど、ご利用の環境
 <br>
 <br>
 
-## 2. [sendcharで指定した文字列の実行結果をファイルとして保存する際に余分な改行を削除する場合](./playbook-example/convert_nl.md)
+## 2. [sendcharで指定した文字列の実行結果をファイルとして保存する際に、余分な改行を削除する場合](./playbook-example/convert_nl.md)
 
 * Cisco IOSと連携してコマンド実行結果をファイルに格納し、余分な空白行を削除するPlaybookの例となります。
 
