@@ -13,7 +13,7 @@ AnsibleやSmartCS用モジュールのバージョンなど、ご利用の環境
 
 ## 目次
 - [1. 特定のrecvcharを受信した際に特定のsendcharを送信する場合](./playbook-example.md#1-特定のrecvcharを受信した際に特定のsendcharを送信する場合)
-- [2. -sendchar-で指定した文字列の実行結果をファイルとして保存する際に余分な改行を削除する場合](./playbook-example.md#2-sendcharで指定した文字列の実行結果をファイルとして保存する際に余分な改行を削除する場合)
+- [2. sendcharで指定した文字列の実行結果をファイルとして保存する際に余分な改行を削除する場合](./playbook-example.md#2-sendcharで指定した文字列の実行結果をファイルとして保存する際に余分な改行を削除する場合)
 
 <br>
 <br>
