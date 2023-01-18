@@ -15,6 +15,7 @@ Playbook 実行時にAnsible のエラーメッセージが出力される場合
 
 ## 目次
 - [1. sendchar で指定した文字列が想定通りに実行されません。](./smartcsmoduletips.md#1-sendchar-で指定した文字列が想定通りに実行されません)
+- [2. sendchar で指定した文字列の実行結果がstdout_lines_customのresponseに正しく格納されず、途中で切れてしまいます。](./smartcsmoduletips.md#2-sendchar-で指定した文字列の実行結果がstdout_lines_customのresponseに正しく格納されず途中で切れてしまいます)
 
 <br>
 <br>
@@ -35,6 +36,18 @@ Playbook の実行結果をエラーとしたい場合は、`failed` を指定�
    - コンソール経由での操作となるため、Playbook 実行時のコンソールの状態は、ログイン前、ログイン後、コンフィグレーションモード移行後など、前回の操作内容により様々なケースが想定されます。  
 `smartcs_tty_command` モジュールを使用した Playbook を作成する際は、最後に`exit` コマンドなどを実行してログアウト状態で終了する様な構成にすることを推奨いたします。  
    - また、`smartcs_tty_command` モジュールには、`sendchar` の送信を開始する前にコンソールの状態をチェックする機能(プレチェック機能)があります。Playbook 開始時に想定したコンソール状態になっていない場合、`sendchar` を送信せずに終了する、コンソールを期待した状態に戻すために`exit` コマンドを実行する、などの動作を指定する事が可能です。  
+
+<br>
+<br>
+
+## 2. sendchar で指定した文字列の実行結果がstdout_lines_customのresponseに正しく格納されず、途中で切れてしまいます。
+#### 想定原因
+実行結果の出力内容が多い（長い）場合、出力にかかる時間に対して`smartcs_tty_command`の`cmd_timeout`オプションで指定している時間が短すぎる、あるいは`smartcs_tty_command` の`__WAIT__`オプションおよび`__NOWAIT__`オプションで指定している時間が短すぎるために、出力内容が`response`に入りきらず、次の`execute_command`や`response`に格納されてしまっている可能性があります。
+
+#### 対処方法
+`smartcs_tty_command`の`cmd_timeout`オプションや、`__WAIT__`オプション、`__NOWAIT__`オプションで指定している時間を、戻り値を出力しきれる秒数に設定してください。
+なお`cmd_timeout`の設定は、`sendchar`で指定しているすべての文字列送信に影響します。エラーなどにより`recvchar`で指定している文字列を受信できない場合、どの`sendchar`であっても、送信後に意図しない待ち時間が発生することになります。そのため、対象の`sendchar`のみに`__WAIT__`や`__NOWAIT__`を使用することを推奨します。
+また、`__WAIT__`オプションを使用する場合、出力内容に`recvchar`内の文字列と完全一致する部分があると、意図せず待ち時間を終了して次の`sendchar`を送信してしまうため、注意が必要です。これを回避するには、`__WAIT__`オプションではなく`__NOWAIT__`オプションを使用することが有効です。
 
 
 
