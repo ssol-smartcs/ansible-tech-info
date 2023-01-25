@@ -1,4 +1,4 @@
-# sendcharで指定した文字列の実行結果をファイルとして保存する際に、余分な改行を削除する場合
+# sendcharで指定したコマンドの実行結果から余分な改行を削除する場合
 
 [↑ ユースケース/サンプルPlaybook に戻る](../playbook-example.md)
 
@@ -19,7 +19,7 @@
   - name: execute show version on IOS
     seiko.smartcs.smartcs_tty_command:
       tty: '1'
-      cmd_timeout: '60'
+      cmd_timeout: 60
       recvchar: 
       - 'Switch>'
       - 'Switch#'
