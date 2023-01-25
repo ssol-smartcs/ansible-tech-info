@@ -15,7 +15,7 @@ Playbook 実行時にAnsible のエラーメッセージが出力される場合
 
 ## 目次
 - [1. sendchar で指定した文字列が想定通りに実行されません。](./smartcsmoduletips.md#1-sendchar-で指定した文字列が想定通りに実行されません)
-- [2. sendchar で指定した文字列の実行結果がstdout_linesなどに正しく格納されません。](./smartcsmoduletips.md#2-sendchar-で指定した文字列の実行結果がstdout_linesなどに正しく格納されません)
+- [2. sendchar で指定した文字列の実行結果がstdout_lines などに正しく格納されません。](./smartcsmoduletips.md#2-sendchar-で指定した文字列の実行結果が-stdout_lines-などに正しく格納されません)
 
 <br>
 <br>
@@ -40,7 +40,7 @@ Playbook の実行結果をエラーとしたい場合は、`failed` を指定�
 <br>
 <br>
 
-## 2. sendchar で指定した文字列の実行結果が stdout_lines などに正しく格納されません。
+## 2. sendchar で指定した文字列の実行結果がstdout_lines などに正しく格納されません。
 #### 想定原因
 実行結果の出力内容が多い（長い）場合、出力にかかる時間に対して`smartcs_tty_command` の`cmd_timeout` オプションで指定している時間が短すぎる、あるいは`smartcs_tty_command` の`__WAIT__` オプションおよび`__NOWAIT__` オプションで指定している時間が短すぎるために、出力内容が `stdout`、`stdout_lines`、`stdout_lines_custom`の`response` データに入りきらず、次の`execute_command` や`response` に格納されてしまっている可能性があります。
 
