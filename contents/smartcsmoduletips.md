@@ -15,7 +15,7 @@ Playbook 実行時にAnsible のエラーメッセージが出力される場合
 
 ## 目次
 - [1. sendchar で指定した文字列が想定通りに実行されません。](./smartcsmoduletips.md#1-sendchar-で指定した文字列が想定通りに実行されません)
-- [2. sendchar で指定した文字列の実行結果がstdout_lines などに正しく格納されません。](./smartcsmoduletips.md#2-sendchar-で指定した文字列の実行結果が-stdout_lines-などに正しく格納されません)
+- [2. sendchar で指定した文字列の実行結果がstdout_lines などに正しく格納されません。](./smartcsmoduletips.md#2-sendchar-で指定した文字列の実行結果がstdout_lines-などに正しく格納されません)
 
 <br>
 <br>
