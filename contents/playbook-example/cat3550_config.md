@@ -141,12 +141,12 @@ ansible_network_os=cisco.ios.ios
 ## 説明
 
 * コンソールへのログインとログアウトには`smartcs_tty_command` モジュールを使用します。
-** `hosts` にはsmartcs(SmartCS) を指定します。
-** `Inventory` ファイルの`ansible_user` 、`ansible_password` には、SmartCS のポートユーザを指定します。
+    * `hosts` にはsmartcs(SmartCS) を指定します。
+    * `Inventory` ファイルの`ansible_user` 、`ansible_password` には、SmartCS のポートユーザを指定します。
 * オペレーションにはベンダーモジュールを使用します。
-** `hosts` にはios_sshxpt(SmartCS) を指定します。
-** `Inventory` ファイルの`ansile_user` 、`ansible_password` には、SmartCS のポートユーザを指定します。
-** `Inventory` ファイルの`ansible_ssh_port` には、SmartCS のトランスペアレント接続機能で使用するポートを指定します。
+    * `hosts` にはios_sshxpt(SmartCS) を指定します。
+    * `Inventory` ファイルの`ansile_user` 、`ansible_password` には、SmartCS のポートユーザを指定します。
+    * `Inventory` ファイルの`ansible_ssh_port` には、SmartCS のトランスペアレント接続機能で使用するポートを指定します。
 * 制御用Playbook を実行すると、ログイン、オペレーション、ログアウトの3つのPlaybook が連続して実行されます
 * このPlaybook は、SmartCS のtty1 に接続されたCisco 装置に対して、コンソールからACL の設定を追加するPlaybook 例です。
 
