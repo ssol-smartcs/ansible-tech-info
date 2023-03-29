@@ -114,12 +114,12 @@ ansible_network_os=cisco.ios.ios
 ## 説明
 
 * コンソールへのログインとログアウトには`smartcs_tty_command` モジュールを使用します。
-** `hosts` にはsmartcs(SmartCS)を指定します。
-** `Inventory` ファイルの`ansible_user` 、`ansible_password` には、SmartCS の拡張ユーザを指定します。
+    * `hosts` にはsmartcs(SmartCS)を指定します。
+    * `Inventory` ファイルの`ansible_user` 、`ansible_password` には、SmartCS の拡張ユーザを指定します。
 * オペレーションにはベンダーモジュールを使用します。
-** `hosts` にはios_sshxpt(SmartCS) を指定します。
-** `Inventory` ファイルの`ansible_user` 、`ansible_password` にはSmartCS のポートユーザを指定します。
-** `Inventory` ファイルの`ansible_ssh_port` には、SmartCS のトランスペアレント接続機能で使用するポートを指定します。
+    * `hosts` にはios_sshxpt(SmartCS) を指定します。
+    * `Inventory` ファイルの`ansible_user` 、`ansible_password` にはSmartCS のポートユーザを指定します。
+    * `Inventory` ファイルの`ansible_ssh_port` には、SmartCS のトランスペアレント接続機能で使用するポートを指定します。
 * オペレーション用Playbook では、情報取得コマンドの実行結果を`register` モジュールでresult という変数に保存し、`debug` モジュールの`msg` オプションを使用して内容を表示します。
 * 制御用Playbook を実行すると、ログイン、オペレーション、ログアウトの3つのPlaybook が連続して実行されます。
 * このPlaybook は、SmartCS のtty1 に接続されたCisco 装置に対して、コンソールから`show version` などの情報取得コマンドを実行し結果を表示するPlaybook 例です。
