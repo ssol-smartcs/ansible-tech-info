@@ -5,7 +5,7 @@
 ## 概要
 
 * 装置ベンダー製のAnsible モジュール（以下、ベンダーモジュール）が用意されているターゲット装置については、ベンダーモジュールと`smartcs_tty_command` を連携して、SmartCS 経由でコンソールからもPlaybook を実行することができます。<br>
-詳細については[演習4.1 STEP4](ansible-handson/SmartCSxIOS/4.1-automation_of_operation_error_recovery.md)のページもご参照ください。
+詳細については[演習4.1 STEP4](/ssol-smartcs/ansible-handson/blob/master/SmartCSxIOS/4.1-automation_of_operation_error_recovery.md#step-4-%E3%82%B3%E3%83%B3%E3%82%BD%E3%83%BC%E3%83%ABSmartCS%E7%B5%8C%E7%94%B1%E3%81%A7%E8%A8%AD%E5%AE%9A%E3%82%92%E5%BE%A9%E6%97%A7%E3%81%95%E3%81%9B%E3%82%8B)のページもご参照ください。
 
 
 ## Playbook例
