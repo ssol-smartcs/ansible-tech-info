@@ -14,6 +14,9 @@ AnsibleやSmartCS用モジュールのバージョンなど、ご利用の環境
 ## 目次
 - [1. 特定のrecvcharを受信した際に特定のsendcharを送信する場合](./playbook-example.md#1-特定のrecvcharを受信した際に特定のsendcharを送信する場合)
 - [2. sendcharで実行したコマンドの実行結果から余分な改行を削除する場合](./playbook-example.md#2-sendcharで指定したコマンドの実行結果から余分な改行を削除する場合)
+- [3. ベンダーモジュールと連携してコンソールから設定を投入する場合](./playbook-example.md#3-ベンダーモジュールと連携してコンソールから設定を投入する場合)
+- [4. ベンダーモジュールと連携してコンソールから情報を取得する場合](./playbook-example.md#4-ベンダーモジュールと連携してコンソールから情報を取得する場合)
+- [5. コンソールからターゲット装置のバージョンアップを実行する場合](./playbook-example.md#5-コンソールからターゲット装置のバージョンアップを実行する場合)
 
 <br>
 <br>
@@ -28,6 +31,27 @@ AnsibleやSmartCS用モジュールのバージョンなど、ご利用の環境
 ## 2. [sendcharで指定したコマンドの実行結果から余分な改行を削除する場合](./playbook-example/convert_nl.md)
 
 * Cisco IOSと連携してコマンド実行結果をファイルに格納し、余分な空白行を削除するPlaybookの例となります。
+
+<br>
+<br>
+
+## 3. [ベンダーモジュールと連携してコンソールから設定を投入する場合](./playbook-example/cat3550_config.md)
+
+* Cisco IOSと連携してコンソールからCisco装置に設定を投入するPlaybookの例となります。
+
+<br>
+<br>
+
+## 4. [ベンダーモジュールと連携してコンソールから情報を取得する場合](./playbook-example/cat3550_show.md)
+
+* Cisco IOSと連携してコンソールからCisco装置の情報を取得するPlaybookの例となります。
+
+<br>
+<br>
+
+## 5. [コンソールからターゲット装置のバージョンアップを実行する場合](./playbook-example/cat1000_verup.md)
+
+* `smartcs_tty_command`を使用して、コンソールからCisco装置のバージョンアップを実行するPlaybookの例となります。
 
 <br>
 <br>
