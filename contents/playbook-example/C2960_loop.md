@@ -5,7 +5,7 @@
 
 ## 概要
 
-* ディクショナリのリスト(cs_parameters)をloopで処理することで、複数のターゲット装置に対して異なるパラメータを設定することができます。
+* ディクショナリのリスト`cs_parameters`を`loop`で処理することで、複数のターゲット装置に対して異なるパラメータを設定することができます。
 
 ## Playbook例
 ```yaml
@@ -42,9 +42,9 @@
    ```
 ## 説明
 * SmartCSのシリアルポート(tty)ごとに、ホスト名/IPアドレスなどのターゲット装置に応じたパラメータをディクショナリのリスト`cs_parameters`として定義します。
-* tasks内でloop処理を使用することで、リスト `cs_parameters` で定義されたttyの順番毎に設定するPlaybook例です。
+* tasks内で`loop`処理を使用することで、リスト `cs_parameters` で定義されたttyの順番毎に設定するPlaybook例です。
 
-## 動作環境確認
-* SmartCS System Software Version 3.1
+## 動作環認環境
+* SmartCS System Software Version 3.1.1
 * SmartCS modules for Ansible Version 1.7.0
-* ansible core 2.16.3
+* ansible-core 2.16.3
