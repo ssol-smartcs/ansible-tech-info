@@ -48,3 +48,7 @@
 * SmartCS System Software Version 3.1.1
 * SmartCS modules for Ansible Version 1.7.0
 * ansible-core 2.16.3
+
+<br><br>
+
+[↑ ユースケース/サンプルPlaybook に戻る](../playbook-example.md)
