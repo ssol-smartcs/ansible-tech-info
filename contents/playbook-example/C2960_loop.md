@@ -44,6 +44,54 @@
 * SmartCSのシリアルポート(tty)ごとに、ホスト名/IPアドレスなどのターゲット装置に応じたパラメータをディクショナリのリスト`cs_parameters`として定義します。
 * tasks内で`loop`処理を使用することで、リスト `cs_parameters` で定義されたttyの順番毎に設定するPlaybook例です。
 
+## 変数ファイルを別ディレクトリに置いて設定する場合
+* 設定値を別ファイルに記載し、そのファイルをPlaybook内で定義して設定する方法となります。
+
+## 設定ファイル例 (c2960l_initial_settings.yml)
+```yaml
+---
+cs_parameters:
+ 
+  - { tty_no: '1', hostname: 'cat2960l-1', ipaddr: '192.168.0.1' }
+  - { tty_no: '2', hostname: 'cat2960l-2', ipaddr: '192.168.0.2' }
+ ```
+## Playbook例
+```yaml
+---
+- name: configure initial setting to multiple cat2960l via SmartCS
+  hosts: smartcs
+  gather_facts: no
+ 
+  vars_files:
+      - config/c2960l_initial_settings.yml
+ 
+  tasks:
+  - name: configure initial setting to multiple cat2960l via SmartCS
+    seiko.smartcs.smartcs_tty_command:
+      tty: "{{ item.tty_no }}"
+      recvchar:
+      - ">"
+      - "#"
+      sendchar:
+      - "__NL__"
+      - "enable"
+      - "configure terminal"
+      - "hostname {{ item.hostname }}"
+      - "interface vlan1"
+      - "ip address {{ item.ipaddr }} 255.255.255.0"
+      - "no shutdown"
+      - "end"
+      - "write memory"
+      - "exit"
+      - "exit"
+    loop: "{{ cs_parameters }}"
+   ```
+## 説明
+* Playbookとは別に設定値を記載した外部ファイルを./config配下に用意します。
+* `vars_files:`オプションで外部ファイルの相対パスを指定し、外部ファイル内に記載された設定値をtask内の<br>
+`loop`処理を使用することで`cs_parameters`で定義されたttyの順番毎に設定するPlaybook例です
+
+
 ## 動作環認環境
 * SmartCS System Software Version 3.1.1
 * SmartCS modules for Ansible Version 1.7.0
